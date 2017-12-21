@@ -1,0 +1,19 @@
+# development:
+#   adapter: async
+
+# test:
+#   adapter: async
+
+# production:
+#   adapter: redis
+#   url: redis://localhost:6379/1
+#   channel_prefix: chat_demo_production
+
+
+redis: &redis
+  adapter: redis
+  url: redis://localhost:6379/1
+
+production: *redis
+development: *redis
+test: *redis

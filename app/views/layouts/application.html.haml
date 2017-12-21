@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatDemo
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/bootstrap-material-design.css', rel: "stylesheet"}
+    %link{href: 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css', rel: 'stylesheet'}
+    %link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}
+  %body
+    %div{class: 'navbar navbar-info no-margin'}
+      .container-fluid
+        .navbar-header
+          %a{href: "#", class: 'navbar-brand'} Demo
+
+        .navbar-collapse.collapse.navbar-responsive-collapse.navbar-right
+          %ul.nav.navbar-nav
+            %li= link_to 'Chats', chat_rooms_path
+    .container
+      = yield
+
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"}

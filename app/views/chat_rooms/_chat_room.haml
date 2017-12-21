@@ -1,0 +1,9 @@
+%li.list-group-item{id: "#{dom_id chat_room}"}
+	.row-picture
+		%img.circle{src: "https://www.gravatar.com/avatar"}
+	.row-content
+		%span.badge.least-content
+			%i.material-icons.left notifications
+			= chat_room.notifications.pending.count
+		%h4.list-group-item-heading= link_to chat_room.title, chat_room_path(chat_room), class: 'black-text'
+	
