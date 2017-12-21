@@ -18,8 +18,23 @@
         .navbar-collapse.collapse.navbar-responsive-collapse.navbar-right
           %ul.nav.navbar-nav
             %li= link_to 'Chats', chat_rooms_path
-    .container
-      = yield
+    
+
+    .card
+      .card-body
+        -if user_signed_in?
+          .row
+            .col-md-4
+              %p.bold
+                Channels
+                = link_to new_chat_room_path, class: 'right-text' do
+                  %i.material-icons add
+              %ul.list-group
+                = render @chat_rooms
+            .col-md-8        
+              = yield
+        - else
+          = yield
 
     %script{src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/material.min.js"}
     %script{src: "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/js/ripples.min.js"}

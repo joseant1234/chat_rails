@@ -1,8 +1,0 @@
-.card.relative
-	.card-body
-		%h1 Chat rooms
-		%ul.list-group
-			= render @chat_rooms
-			
-= link_to new_chat_room_path, class: 'btn btn-info btn-fab fixed', style: 'bottom: 2em; right: 2em;' do
-	%i.material-icons add
