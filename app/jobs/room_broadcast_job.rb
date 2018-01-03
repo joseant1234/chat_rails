@@ -3,7 +3,7 @@ class RoomBroadcastJob < ApplicationJob
 
 	def perform(message)
 		message.chat_room.notifications.create!
-		ActionCable.server.broadcast "index_chat_rooms_channel", room: render_room(message.chat_room), source: 'rooms', room_id: message.chat_room_id
+		ActionCable.server.broadcast "chat_rooms_channel", room: render_room(message.chat_room), source: 'rooms', room_id: message.chat_room_id
 	end
 
 	private

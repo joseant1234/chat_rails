@@ -1,18 +1,56 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.ui-autocomplete {
+    @extend .z-depth-1;
+    background-color: #fff;
+    position: fixed; // To prevent li elements go to the end of the screen
+
+    li {
+        @extend .col, .s12, .l4; // Edit this the way you like it. or to make it the same width as the input
+        font-size: 1.2rem;
+        color: #26a69a; // Teal color
+        line-height: 1.5rem;
+        padding: 1rem 1rem;
+
+        &:hover {
+            background: #eee;
+        }
+    }
+}
+    // Remove unwanted text comming from plugin
+.ui-helper-hidden-accessible {
+    display: none;
+    visibility: hidden;
+}
+
 
 .top-space{
-	margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 .no-margin{
-	margin: 0px;
+  margin: 0px !important;
 }
 
 .no-padding{
-	padding: 0px !important;
+  padding: 0px !important;
 }
 
 .fixed{
-	position: fixed !important;
+  position: fixed !important;
 }
+
+.bold{
+  font-weight: bold;
+}
+.big{
+  font-size: 3em;
+}
+.medium{
+  font-size: 1.5em;
+}
+.small{
+  font-size: 1.7rem;
+}
+
 

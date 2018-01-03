@@ -1,0 +1,4 @@
+$("#errors_<%= resource.class.name %>").html("")
+<% resource.errors.full_messages.each do |msg| %>
+	$("#errors_<%= resource.class.name %>").append($("<li class='red-text' />").html("<%= msg %>"))
+<% end %>

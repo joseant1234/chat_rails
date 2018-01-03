@@ -10,6 +10,10 @@ class Notification < ApplicationRecord
   aasm :column => :state, :enum => true do
   	state :pending, :initial => true
   	state :readed
+
+    event :read do
+      transitions :from => :pending, :to => :readed
+    end
   end
 
 end

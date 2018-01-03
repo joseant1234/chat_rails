@@ -1,0 +1,7 @@
+<% unless resource.blank? %>
+	<% resource.errors.full_messages.each do |msg| %>
+		Materialize.toast("<%= msg %>",6000)
+	<% end %>
+<% else %>
+	Materialize.toast("<%= msg %>",6000)
+<% end %>
